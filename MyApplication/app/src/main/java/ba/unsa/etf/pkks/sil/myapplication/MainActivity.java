@@ -13,57 +13,29 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import ba.unsa.etf.pkks.sil.myapplication.Backand.Book;
+import ba.unsa.etf.pkks.sil.myapplication.Backand.BookDAO;
 import ba.unsa.etf.pkks.sil.myapplication.Backand.BooksAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE = "ba.unsa.etf.pkks.sil.myapplication.MainActivity.MESSAGE";
+    public static final String EXTRA_BOOKID = "ba.unsa.etf.pkks.sil.myapplication.MainActivity.BOOKID";
 
-    private ArrayList<Book> books;
     private ListView list;
+    private BookDAO mBooks;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-
-        books = new ArrayList<Book>();
-        dodajKnjige();
+        mBooks = new BookDAO();
 
         list = (ListView) findViewById(R.id.listView);
 
-        BooksAdapter adapter = new BooksAdapter(books, this);
+        BooksAdapter adapter = new BooksAdapter(mBooks.getAllBooks(), this);
         list.setAdapter(adapter);
-
-
     }
 
-    void dodajKnjige(){
-        if(books == null)
-            books = new ArrayList<Book>();
-
-        Book b1 = new Book();
-        b1.setTitle("Orlovi rano lete");
-        b1.setAuthor("Branko Ćopić");
-        b1.setIsbn("ISBN 978-86-01-01688-0");
-        b1.setDescription("Dječja knjiga.");
-        b1.setPublishDate(new Date());
-        b1.setPagesNumber(190);
-
-        books.add(b1);
-
-
-        Book b2 = new Book();
-        b2.setTitle("Parfem");
-        b2.setAuthor("Branko Ćopić");
-        b2.setIsbn("ISBN 978-86-01-01688-0");
-        b2.setDescription("Dječja knjiga.");
-        b2.setPublishDate(new Date());
-        b2.setPagesNumber(190);
-        b2.setStatus(1);
-
-        books.add(b2);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -99,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showBook(long bookId){
-
+        Intent intent = new Intent(this, BookDisplayActivity.class);
+        intent.putExtra(EXTRA_BOOKID, bookId);
+        startActivity(intent);
     }
 }

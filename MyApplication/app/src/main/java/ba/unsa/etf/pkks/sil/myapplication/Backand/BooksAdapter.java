@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import ba.unsa.etf.pkks.sil.myapplication.MainActivity;
 import ba.unsa.etf.pkks.sil.myapplication.R;
 
 /**
@@ -20,8 +21,8 @@ public class BooksAdapter extends BaseAdapter {
 
     private List<Book> mBooks;
     private LayoutInflater mLayoutInflater = null;
-    private Activity mContext;
-    public BooksAdapter(List<Book> books, Activity context){
+    private MainActivity mContext;
+    public BooksAdapter(List<Book> books, MainActivity context){
         this.mBooks = books;
         mContext = context;
         mLayoutInflater = (LayoutInflater) mContext
@@ -50,7 +51,7 @@ public class BooksAdapter extends BaseAdapter {
             v = mLayoutInflater.inflate(R.layout.book_item, viewGroup, false);
         }
 
-        Book book = mBooks.get(i);
+        final Book book = mBooks.get(i);
 
         TextView title = (TextView) v.findViewById(R.id.book_item_title);
         title.setText(book.getTitle());
@@ -61,7 +62,7 @@ public class BooksAdapter extends BaseAdapter {
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mContext.showBook(book.getId());
             }
         });
         return v;

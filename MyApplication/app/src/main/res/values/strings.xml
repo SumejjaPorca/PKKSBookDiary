@@ -11,4 +11,5 @@
     <string name="reading">Čitanje u toku...</string>
     <string name="read">Procitano</string>
     <string name="invalid">Nije evidentirano</string>
+    <string name="title_activity_book_display">BookDisplayActivity</string>
 </resources>

@@ -1,32 +1,41 @@
 package ba.unsa.etf.pkks.sil.myapplication;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class DisplayMessageActivity extends AppCompatActivity {
+import ba.unsa.etf.pkks.sil.myapplication.Backand.Book;
+import ba.unsa.etf.pkks.sil.myapplication.Backand.BookDAO;
 
+public class BookDisplayActivity extends AppCompatActivity {
+
+    Book mBook;
+    BookDAO mDao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_book_display);
+
         Intent intent = getIntent();
+        long id = intent.getLongExtra(MainActivity.EXTRA_BOOKID, 0L);
 
-        //Dobavljamo string koji smo stavili s itent.putExtra
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        mDao = new BookDAO();
+        mBook = mDao.getById(id);
 
-        TextView textView = new TextView(this);
-        textView.setTextSize(40);
-        textView.setText(message);
+        TextView text =(TextView) findViewById(R.id.book_display_title);
+        text.setText(mBook.getTitle());
 
-        setContentView(textView);
+        setTitle(mBook.getTitle());
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_book_display, menu);
+        return true;
     }
 
     @Override
@@ -43,6 +52,4 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }

@@ -19,7 +19,15 @@
         <activity
             android:name=".DisplayMessageActivity"
             android:label="@string/title_activity_display_message"
-            android:parentActivityName="ba.unsa.etf.pkks.sil.myapplication.MainActivity">
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ba.unsa.etf.pkks.sil.myapplication.MainActivity" />
+        </activity>
+        <activity
+            android:name=".BookDisplayActivity"
+            android:label="@string/title_activity_book_display"
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ba.unsa.etf.pkks.sil.myapplication.MainActivity" />
