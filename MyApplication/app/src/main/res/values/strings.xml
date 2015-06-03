@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name"> Moj dnevnik knjiga</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -7,14 +7,16 @@
     <string name="edit_message">Enter message</string>
     <string name="title_activity_display_message">My Message</string>
     <string name="send_message">Send message</string>
-    <string name="notRead">Neprocitana</string>
+    <string name="notRead">Nepročitana</string>
     <string name="reading">Čitanje u toku...</string>
-    <string name="read">Procitano</string>
+    <string name="read">Pročitano</string>
     <string name="invalid">Nije evidentirano</string>
     <string name="title_activity_book_display">BookDisplayActivity</string>
     <string name="enter_title">Unesi naslov...</string>
     <string name="button_search">Traži</string>
     <string name="add_book">Dodaj knjigu...</string>
-    <string name="title_activity_add_book">AddBook</string>
+    <string name="title_activity_add_book">Dodaj knjigu</string>
     <string name="enter_isbn">Unesi ISBN...</string>
+
+    <string name="status">Status knjige?</string>
 </resources>

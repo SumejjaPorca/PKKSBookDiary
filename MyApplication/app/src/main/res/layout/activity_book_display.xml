@@ -6,7 +6,38 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="ba.unsa.etf.pkks.sil.myapplication.BookDisplayActivity">
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
     <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
         android:layout_height="wrap_content" android:id="@+id/book_display_title"/>
+    <TextView android:text="@string/status" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:id="@+id/book_status_label"/>
 
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton android:id="@+id/radio_notRead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/notRead"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/radio_reading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reading"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton android:id="@+id/radio_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/read"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+    </LinearLayout>
 </RelativeLayout>

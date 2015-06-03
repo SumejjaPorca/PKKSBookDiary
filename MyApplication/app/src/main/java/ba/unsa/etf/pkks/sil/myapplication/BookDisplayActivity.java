@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import ba.unsa.etf.pkks.sil.myapplication.Backand.Book;
@@ -44,5 +46,29 @@ public class BookDisplayActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onRadioButtonClicked(View view){
+        if(view == null)
+            return;
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radio_notRead:
+                if (checked)
+                    mBook.setStatus(0);
+                    break;
+            case R.id.radio_reading:
+                if (checked)
+                    mBook.setStatus(1);
+                    break;
+            case R.id.radio_read:
+                if (checked)
+                    mBook.setStatus(2);
+                    break;
+        }
+
     }
 }
