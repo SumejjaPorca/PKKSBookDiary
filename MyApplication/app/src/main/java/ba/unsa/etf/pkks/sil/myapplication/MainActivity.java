@@ -28,7 +28,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        mBooks = new BookDAO();
+        mBooks = new BookDAO(getBaseContext());
+        mBooks.open();
+
+
+
+/*
+        Book b2 = new Book();
+        b2.setTitle("Parfem");
+        b2.setAuthor("Branko Ćopić");
+        b2.setIsbn("ISBN 978-86-01-01688-2");
+        b2.setDescription("Knjiga istaknutog fracuskog književnika.");
+        b2.setPublishDate(new Date());
+        b2.setPagesNumber(190);
+        b2.setStatus(1);
+        mBooks.addBook(b2);
+        */
 
         list = (ListView) findViewById(R.id.listView);
 
@@ -75,5 +90,19 @@ public class MainActivity extends AppCompatActivity {
 
         BooksAdapter adapter = new BooksAdapter(mBooks.getAllByTitle(title), this);
         list.setAdapter(adapter);
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mBooks.open();
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mBooks.close();
     }
 }

@@ -16,11 +16,29 @@ public class Book {
     public String title;
     public String author;
     public String isbn;
-    //Upload kover slike
     public Date publishDate;
     public int pagesNumber;
     public int status;
     public String description;
+    public String photoLink;
+
+    public Book(){
+
+    }
+
+    //id, title, description, author, d, pages, status, isbn, photo
+    public Book(int id, String title, String description, String author, Date d,int pages, int status, String isbn,String photo){
+        setStatus(status);
+        setAuthor(author);
+        setDescription(description);
+        setId(id);
+        setIsbn(isbn);
+        setPagesNumber(pages);
+        setPhotoLink(photo);
+        setPublishDate(d);
+        setTitle(title);
+
+    }
 
 
     public long getId() {
@@ -37,6 +55,14 @@ public class Book {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getPhotoLink() {
+        return photoLink;
+    }
+
+    public void setPhotoLink(String link) {
+        this.photoLink = link;
     }
 
     public String getAuthor() {
