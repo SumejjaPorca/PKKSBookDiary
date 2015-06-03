@@ -32,6 +32,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ba.unsa.etf.pkks.sil.myapplication.MainActivity" />
         </activity>
+        <activity
+            android:name=".AddBook"
+            android:label="@string/title_activity_add_book"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ba.unsa.etf.pkks.sil.myapplication.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

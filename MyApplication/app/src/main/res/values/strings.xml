@@ -15,4 +15,6 @@
     <string name="enter_title">Unesi naslov...</string>
     <string name="button_search">Traži</string>
     <string name="add_book">Dodaj knjigu...</string>
+    <string name="title_activity_add_book">AddBook</string>
+    <string name="enter_isbn">Unesi ISBN...</string>
 </resources>

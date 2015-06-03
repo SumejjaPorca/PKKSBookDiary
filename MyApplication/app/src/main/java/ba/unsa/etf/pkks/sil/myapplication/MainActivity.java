@@ -52,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.add_book) {
+            Intent intent = new Intent(this,AddBook.class);
+            startActivity(intent);
             return true;
         }
 
