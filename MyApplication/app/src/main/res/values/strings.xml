@@ -19,6 +19,9 @@
     <string name="enter_isbn">Unesi ISBN...</string>
     <string name="author_label">Autor: </string>
     <string name="desc_label">Opis: </string>
-
+    <string name="load_pic_label">Učitaj sliku</string>
     <string name="status">Status knjige?</string>
+    <string name="date_label">Datum izdavanja: </string>
+    <string name="img_not_picked">Niste odabrali sliku! </string>
+    <string name="error">Došlo je do greške! </string>
 </resources>

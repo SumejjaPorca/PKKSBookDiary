@@ -86,6 +86,22 @@ public class BookDAO
                 selectionArgs);
         return count;
     }
+    public int updatePhoto(Book book){
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(BookDiaryContract.BookEntry.COLUMN_NAME_PHOTO_LINK, book.getPhotoLink());
+
+        // Which row to update, based on the ID
+        String selection = BookDiaryContract.BookEntry.COLUMN_NAME_BOOK_ID + " = ?";
+        String[] selectionArgs = { String.valueOf(book.getId())};
+
+        int count = mDatabase.update(
+                BookDiaryContract.BookEntry.TABLE_NAME_BOOK,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
 
 
     public Book getById(long id){

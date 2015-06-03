@@ -40,19 +40,6 @@
             android:text="@string/read"
             android:onClick="onRadioButtonClicked"/>
     </RadioGroup>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView android:text="@string/desc_label" android:layout_width="fill_parent"
-            style="@style/SmallText" android:textStyle="bold"
-            android:layout_height="wrap_content" android:id="@+id/book_display_desc_label"/>
-
-        <TextView android:text="" android:layout_width="fill_parent"
-            style="@style/SmallText" android:textStyle="italic"
-            android:layout_height="wrap_content" android:id="@+id/book_display_desc"/>
-        </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -64,9 +51,54 @@
             android:layout_height="wrap_content" android:id="@+id/book_display_author_label"/>
 
         <TextView android:text="" android:layout_width="fill_parent"
-            style="@style/SmallText" android:textStyle="italic"
+            style="@style/SmallText"
             android:layout_height="wrap_content" android:id="@+id/book_display_author"/>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:text="@string/date_label" android:layout_width="fill_parent"
+            style="@style/SmallText" android:textStyle="bold"
+            android:layout_height="wrap_content" android:id="@+id/book_display_date_label"/>
+
+        <TextView android:text="" android:layout_width="fill_parent"
+            style="@style/SmallText"
+            android:layout_height="wrap_content" android:id="@+id/book_display_date"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView android:text="@string/desc_label" android:layout_width="fill_parent"
+            style="@style/SmallText" android:textStyle="bold"
+            android:layout_height="wrap_content" android:id="@+id/book_display_desc_label"/>
+
+        <TextView android:text="" android:layout_width="fill_parent"
+            style="@style/SmallText" android:textStyle="italic"
+            android:layout_height="wrap_content" android:id="@+id/book_display_desc"/>
+    </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+        </ImageView>
+
+        <Button
+            android:id="@+id/buttonLoadPicture"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0"
+            android:onClick="loadImagefromGallery"
+            android:text="@string/load_pic_label" >
+            </Button>
     </LinearLayout>
 </RelativeLayout>
