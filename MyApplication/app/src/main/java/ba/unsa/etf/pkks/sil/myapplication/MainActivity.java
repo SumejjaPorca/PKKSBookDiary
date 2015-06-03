@@ -54,25 +54,24 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
-        } else if (id == R.id.send_message){
-            sendMessage(findViewById(R.id.send_message));
-            return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    public void sendMessage(View view){
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText text = (EditText) findViewById(R.id.edit_message);
-        String message = text.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-    }
+
 
     public void showBook(long bookId){
         Intent intent = new Intent(this, BookDisplayActivity.class);
         intent.putExtra(EXTRA_BOOKID, bookId);
         startActivity(intent);
+    }
+
+    public void searchBooks(View view) {
+        EditText edit = (EditText) findViewById(R.id.edit_search_title);
+        String title = edit.getText().toString();
+
+        BooksAdapter adapter = new BooksAdapter(mBooks.getAllByTitle(title), this);
+        list.setAdapter(adapter);
     }
 }
