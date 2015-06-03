@@ -21,4 +21,5 @@
     <string name="desc_label">Opis: </string>
 
     <string name="status">Status knjige?</string>
+    <string name="book_found">Knjiga pronađena</string>
 </resources>
