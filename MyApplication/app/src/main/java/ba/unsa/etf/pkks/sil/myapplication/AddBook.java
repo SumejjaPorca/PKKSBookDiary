@@ -174,7 +174,7 @@ public class AddBook extends AppCompatActivity {
 
             if(data.has("physical_description_text")) {
                 String pages = data.getString("physical_description_text");
-                Pattern p = Pattern.compile(".*((\\d+)[ ]p\\.).*");
+                Pattern p = Pattern.compile("^.*((\\d+)[ ]p\\.).*$");
                 Matcher m = p.matcher(pages);
                 if(m.matches()) {
                     String pagesStr = m.group(2);
@@ -190,7 +190,8 @@ public class AddBook extends AppCompatActivity {
 
             if(data.has("author_data" )){
                 JSONArray authors = data.getJSONArray("author_data" );
-                b.setAuthor(authors.getJSONObject(0).getString("name"));
+                if(authors.length() > 0)
+                    b.setAuthor(authors.getJSONObject(0).getString("name"));
             }
             return  b;
         }
@@ -201,7 +202,7 @@ public class AddBook extends AppCompatActivity {
         title.setText(foundBook.getTitle() == null ? "" : foundBook.getTitle());
 
         EditText author = (EditText) findViewById(R.id.add_book_author);
-        author.setText(foundBook.getTitle() == null ? "" :  foundBook.getTitle());
+        author.setText(foundBook.getAuthor() == null ? "" :  foundBook.getAuthor());
 
         EditText isbn = (EditText) findViewById(R.id.add_book_isbn);
         isbn.setText(foundBook.getIsbn() == null ? "" : foundBook.getIsbn());
@@ -210,7 +211,8 @@ public class AddBook extends AppCompatActivity {
         pages.setText(""+foundBook.getPagesNumber());
 
         DatePicker dp = (DatePicker)findViewById(R.id.add_book_publish_date);
-        dp.updateDate(foundBook.getPublishDate().getYear(), foundBook.getPublishDate().getMonth(),
+        if(foundBook.getPublishDate() != null)
+            dp.updateDate(foundBook.getPublishDate().getYear(), foundBook.getPublishDate().getMonth(),
                 foundBook.getPublishDate().getDay());
 
         EditText desc = (EditText) findViewById(R.id.add_book_description);
