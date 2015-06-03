@@ -6,32 +6,98 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="ba.unsa.etf.pkks.sil.myapplication.AddBook">
 
-    <EditText
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/add_book_show"
-        android:text="Pocetak je ovdje... e sad sto ce dalje biti ne znam"/>
-
+        android:id="@+id/scrollView" >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@android:color/white"
-        android:orientation="horizontal">
 
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
 
-        <EditText android:id="@+id/edit_search_isbn"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:layout_weight="9"
-            android:hint="@string/enter_isbn"
-            />
+            android:text="@string/book_title"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_book_title"
+            android:id="@+id/add_book_title"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book_author"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_book_author"
+            android:id="@+id/add_book_author"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book_isbn"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_book_isbn"
+            android:id="@+id/add_book_isbn"
+            android:inputType="none"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/button_search"
+            android:text="@string/button_fill_by_isbn"
             android:onClick="searchBooks"
             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book_description"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:id="@+id/add_book_description" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_book_publish_date"/>
+
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:id="@+id/add_book_publish_date"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book_pages"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:id="@+id/add_book_pages" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_book"
+            android:id="@+id/button"
+            android:onClick="saveBook"
+            />
     </LinearLayout>
+    </ScrollView>
+
+
+
 </RelativeLayout>

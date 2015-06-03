@@ -13,7 +13,7 @@
     <string name="invalid">Nije evidentirano</string>
     <string name="title_activity_book_display">BookDisplayActivity</string>
     <string name="enter_title">Unesi naslov...</string>
-    <string name="button_search">Traži</string>
+    <string name="button_search">Nadji</string>
     <string name="add_book">Dodaj knjigu...</string>
     <string name="title_activity_add_book">Dodaj knjigu</string>
     <string name="enter_isbn">Unesi ISBN...</string>
@@ -22,4 +22,17 @@
 
     <string name="status">Status knjige?</string>
     <string name="book_found">Knjiga pronađena</string>
+    <string name="book_title">Naslov</string>
+    <string name="add_book_title">Upiši naslov...</string>
+    <string name="book_author">Autor</string>
+    <string name="add_book_author">Upiši autora...</string>
+    <string name="book_isbn">ISBN</string>
+    <string name="add_book_isbn">Upiši ISBN...</string>
+    <string name="book_description">Opis</string>
+    <string name="add_book_description">Upiši opis</string>
+    <string name="book_publish_date">Datum objavljivanja</string>
+    <string name="book_pages">Broj stranica:</string>
+    <string name="add_book_publish_date">Datum objavljivanja</string>
+    <string name="book_not_found">Knjiga nije pronađena</string>
+    <string name="button_fill_by_isbn">Popuni po ISBNu</string>
 </resources>
