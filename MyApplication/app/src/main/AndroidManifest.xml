@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ba.unsa.etf.pkks.sil.myapplication" >
-
+    <uses-sdk android:targetSdkVersion="16" android:minSdkVersion="8"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
@@ -15,14 +17,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".DisplayMessageActivity"
-            android:label="@string/title_activity_display_message"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="ba.unsa.etf.pkks.sil.myapplication.MainActivity" />
         </activity>
         <activity
             android:name=".BookDisplayActivity"
@@ -42,5 +36,6 @@
         </activity>
         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     </application>
+
 
 </manifest>
