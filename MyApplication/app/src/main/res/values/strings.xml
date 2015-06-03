@@ -17,6 +17,8 @@
     <string name="add_book">Dodaj knjigu...</string>
     <string name="title_activity_add_book">Dodaj knjigu</string>
     <string name="enter_isbn">Unesi ISBN...</string>
+    <string name="author_label">Autor: </string>
+    <string name="desc_label">Opis: </string>
 
     <string name="status">Status knjige?</string>
 </resources>

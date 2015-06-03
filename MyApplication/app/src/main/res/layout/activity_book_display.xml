@@ -16,6 +16,7 @@
         style="@style/MediumText"
         android:layout_height="wrap_content" android:id="@+id/book_display_title"/>
     <TextView android:text="@string/status" android:layout_width="wrap_content"
+        style="@style/SmallText"
         android:layout_height="wrap_content" android:id="@+id/book_status_label"/>
 
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -25,7 +26,7 @@
         <RadioButton android:id="@+id/radio_notRead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/notRead"
+            android:text="@string/notRead" 
             android:onClick="onRadioButtonClicked"/>
         <RadioButton android:id="@+id/radio_reading"
             android:layout_width="wrap_content"
@@ -39,6 +40,33 @@
             android:text="@string/read"
             android:onClick="onRadioButtonClicked"/>
     </RadioGroup>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+        <TextView android:text="@string/desc_label" android:layout_width="fill_parent"
+            style="@style/SmallText" android:textStyle="bold"
+            android:layout_height="wrap_content" android:id="@+id/book_display_desc_label"/>
+
+        <TextView android:text="" android:layout_width="fill_parent"
+            style="@style/SmallText" android:textStyle="italic"
+            android:layout_height="wrap_content" android:id="@+id/book_display_desc"/>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:text="@string/author_label" android:layout_width="fill_parent"
+            style="@style/SmallText" android:textStyle="bold"
+            android:layout_height="wrap_content" android:id="@+id/book_display_author_label"/>
+
+        <TextView android:text="" android:layout_width="fill_parent"
+            style="@style/SmallText" android:textStyle="italic"
+            android:layout_height="wrap_content" android:id="@+id/book_display_author"/>
+
+    </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
