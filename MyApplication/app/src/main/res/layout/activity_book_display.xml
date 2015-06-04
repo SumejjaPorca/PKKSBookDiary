@@ -98,9 +98,8 @@
             <ImageView
                 android:id="@+id/imgView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" >
-            </ImageView>
+                android:layout_height="wrap_content">
+                </ImageView>
 
             <Button
                 android:id="@+id/buttonLoadPicture"

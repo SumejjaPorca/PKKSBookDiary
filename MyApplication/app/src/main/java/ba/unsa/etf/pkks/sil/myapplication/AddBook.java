@@ -34,6 +34,8 @@ import java.util.regex.Pattern;
 
 import ba.unsa.etf.pkks.sil.myapplication.Backand.Book;
 import ba.unsa.etf.pkks.sil.myapplication.Backand.BookDAO;
+import ba.unsa.etf.pkks.sil.myapplication.Scanner.IntentIntegrator;
+import ba.unsa.etf.pkks.sil.myapplication.Scanner.IntentResult;
 
 public class AddBook extends AppCompatActivity {
 
@@ -50,6 +52,12 @@ public class AddBook extends AppCompatActivity {
 
         mBookDao = new BookDAO(getBaseContext());
 
+
+    }
+
+    public void onScanClick(View view){
+        IntentIntegrator scanIntegrator = new IntentIntegrator(this);
+        scanIntegrator.initiateScan();
 
     }
 
@@ -248,5 +256,24 @@ public class AddBook extends AppCompatActivity {
         Intent intent = new Intent(this, BookDisplayActivity.class);
         intent.putExtra(MainActivity.EXTRA_BOOKID, id);
         startActivity(intent);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+    //retrieve scan result
+        IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+        if (scanningResult != null) {
+            //we have a result
+            String scanContent = scanningResult.getContents();
+            String scanFormat = scanningResult.getFormatName();
+            EditText contentTxt = (EditText)findViewById(R.id.add_book_isbn);
+            contentTxt.setText(scanContent);
+        }
+        else{
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "No scan data received!", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+
     }
 }
