@@ -38,4 +38,5 @@
     <string name="add_book_publish_date">Datum objavljivanja</string>
     <string name="book_not_found">Knjiga nije pronađena</string>
     <string name="button_fill_by_isbn">Popuni po ISBNu</string>
+    <string name="scan">Skeniraj ISBN</string>
 </resources>

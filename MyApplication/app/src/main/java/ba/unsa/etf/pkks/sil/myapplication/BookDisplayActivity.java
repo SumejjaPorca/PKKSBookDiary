@@ -161,8 +161,8 @@ public class BookDisplayActivity extends AppCompatActivity {
                 Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
-           /* Toast.makeText(this, getResources().getString(R.string.error), Toast.LENGTH_LONG)
-                    .show();*/
+            Toast.makeText(this, getResources().getString(R.string.error), Toast.LENGTH_LONG)
+                    .show();
         }
 
     }
