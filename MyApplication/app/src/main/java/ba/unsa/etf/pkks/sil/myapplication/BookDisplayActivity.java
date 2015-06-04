@@ -46,7 +46,7 @@ public class BookDisplayActivity extends AppCompatActivity {
         TextView desc =(TextView) findViewById(R.id.book_display_desc);
         desc.setText(mBook.getDescription());
         TextView date =(TextView) findViewById(R.id.book_display_date);
-        desc.setText(prettyDate(mBook.getPublishDate()));
+        date.setText(prettyDate(mBook.getPublishDate()));
 
         setTitle(mBook.getTitle());
 
